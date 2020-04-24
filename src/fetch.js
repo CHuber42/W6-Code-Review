@@ -15,7 +15,3 @@
   }
 
 }
-
-export function extractRates(response){
-  console.log(response)
-}
