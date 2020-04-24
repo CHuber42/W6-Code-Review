@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import './styles.css';
 import { getRates } from "./fetch.js";
-import { processResult } from "./resultsFinder.js";
+import { processResult, symbolTranslation } from "./resultsFinder.js";
 
 
 $(document).ready(async function() {
@@ -16,7 +16,8 @@ $(document).ready(async function() {
     
     if (rates[targetCurrency] && userDollars > 0) {
       let finalResult = processResult(userDollars, targetCurrency, rates);
-      $("#results_presentation").text(`You will receive: ${finalResult.toFixed(2)} ${targetCurrency}`);
+      let currencySymbol = symbolTranslation(targetCurrency);
+      $("#results_presentation").text(`You will receive: ${finalResult.toFixed(2)} ${currencySymbol}`);
     }
     else {
       $("#results_presentation").text(`I'm sorry, something went wrong. You may not have input a dollar value, 
