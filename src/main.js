@@ -14,7 +14,10 @@ $(document).ready(async function() {
     let userDollars = $("#usd").val();
     let targetCurrency = $("#targetCurrency").val();
     
-    if (rates[targetCurrency] && userDollars > 0) {
+    if (userDollars <= 0) {
+      $("#results_presentation").text("Your input dollars are invalid: [None] or < 0!");
+    }
+    else if (rates[targetCurrency] && userDollars > 0) {
       let finalResult = processResult(userDollars, targetCurrency, rates);
       let currencySymbol = symbolTranslation(targetCurrency);
       $("#results_presentation").text(`You will receive: ${finalResult.toFixed(2)} ${currencySymbol}`);

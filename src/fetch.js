@@ -1,4 +1,4 @@
- export async function getRates() {
+export async function getRates() {
   try {
     let response = await fetch (`https://prime.exchangerate-api.com/v5/${process.env.API_KEY}/latest/USD`);
     let jsonedResponse;
@@ -11,7 +11,7 @@
     return jsonedResponse.conversion_rates;
   }
   catch (error) {
-    console.log(error)
+    console.log(error);
   }
 
 }
