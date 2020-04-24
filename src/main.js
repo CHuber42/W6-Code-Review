@@ -2,17 +2,18 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { getRates } from "./fetch.js"
+import { getRates } from "./fetch.js";
+import { processResult } from "./resultsFinder.js"
 
 
 $(document).ready(function() {
   $("#submit").click(async function() {
     let userDollars = $("#usd").val();
     let targetCurrency = $("#targetCurrency").val();
-    console.log(userDollars, targetCurrency)
-
     let rates = await getRates();
-    console.log(rates)
+    
+    let finalResult = processResult(userDollars, targetCurrency, rates);
+    console.log(finalResult)
     
     
   })
