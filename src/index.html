@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head> 
-    <title></title>
+    <title>Currency Converter</title>
   </head>
   <body>
-    <div class="container">
-      <label>Enter Quantity of USD:</label>
+    <div class="container well">
+      <h4>Please Note: This website converts currency via an API call to https://www.exchangerate-api.com/<br>
+      All conversions are performed using the rates posted there, and accuracy cannot be 100% guaranteed</h4>
+      <label>Enter Quantity of USD to convert:</label><br>
       <input id="usd" type="number"><br>
-      <label>Select a currency to convert to:</label>
+      <label>Select a currency to convert to:</label><br>
       <select id="targetCurrency">
         <option value="USD">US Dollar</option>
         <option value="AED">UAE Dirham</option>
@@ -60,10 +62,9 @@
         <option value="UAH">Ukraine Hryvnia</option>
         <option value="UYU">Uruguay Peso</option>
         <option value="ZAR">South African Rand</option>
-      </select><br>
-      <button id="submit" type="submit">Submit</button><br>
+      </select><br><br>
 
-      <label>You will receive:</label>
+
       <div id="results_presentation"></div>
 
 

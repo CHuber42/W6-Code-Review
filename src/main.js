@@ -1,21 +1,22 @@
 import $ from 'jquery';
-import 'bootstrap';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
 import './styles.css';
 import { getRates } from "./fetch.js";
 import { processResult } from "./resultsFinder.js";
 
 
-$(document).ready(function() {
+$(document).ready(async function() {
+  let rates = await getRates();
 
-  $("#submit").click(async function() {
+  $("#targetCurrency").on("change", async function() {
     let userDollars = $("#usd").val();
     let targetCurrency = $("#targetCurrency").val();
-    let rates = await getRates();
-
+    
     if (rates[targetCurrency] && userDollars > 0) {
       let finalResult = processResult(userDollars, targetCurrency, rates);
-      $("#results_presentation").text(`${finalResult} ${targetCurrency}`);
+      $("#results_presentation").text(`You will receive: ${finalResult.toFixed(2)} ${targetCurrency}`);
     }
     else {
       $("#results_presentation").text(`I'm sorry, something went wrong. You may not have input a dollar value, 
