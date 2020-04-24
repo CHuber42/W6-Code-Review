@@ -29,6 +29,8 @@ API key can be obtained at: https://www.exchangerate-api.com/
 ** Spec 6: Using Spec 2, process result of Spec 5 to find conversion rate **
 ** Spec 7: Convert Spec 1 input by Spec 6 Conversion Rate **
 ** Spec 8: Output Spec 7 to results visible to user **
+** Spec 9: add switch to translate target currency request to currency symbol (if available) **
+
 
 
 ##### _Contact_:
