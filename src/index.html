@@ -5,7 +5,9 @@
   </head>
   <body>
     <div class="container">
-      <input id="usd" type="number">
+      <label>Enter Quantity of USD:</label>
+      <input id="usd" type="number"><br>
+      <label>Select a currency to convert to:</label>
       <select id="targetCurrency">
         <option value="USD">US Dollar</option>
         <option value="AED">UAE Dirham</option>
@@ -58,9 +60,10 @@
         <option value="UAH">Ukraine Hryvnia</option>
         <option value="UYU">Uruguay Peso</option>
         <option value="ZAR">South African Rand</option>
-      </select>
-      <button id="submit" type="submit">Submit</button>
+      </select><br>
+      <button id="submit" type="submit">Submit</button><br>
 
+      <label>You will receive:</label>
       <div id="results_presentation"></div>
 
 
