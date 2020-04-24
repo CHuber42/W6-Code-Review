@@ -18,7 +18,8 @@ $(document).ready(function() {
       $("#results_presentation").text(`${finalResult} ${targetCurrency}`);
     }
     else {
-      $("#results_presentation").text("I'm sorry, your input was invalid. You may not have input a dollar value, or chosen a target currency that does not exist.");
+      $("#results_presentation").text("I'm sorry, something went wrong. You may not have input a dollar value, or chosen a target currency that does not exist, or the API call may have failed. Check the console for details.");
+      console.log(`Dollars Input: ${userDollars}, Currency in list: ${rates[targetCurrency]}`)
     }
   })
 })

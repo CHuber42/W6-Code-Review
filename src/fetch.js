@@ -11,7 +11,7 @@
     return jsonedResponse.conversion_rates;
   }
   catch (error) {
-    //log error
+    console.log(error)
   }
 
 }
