@@ -11,10 +11,9 @@ $(document).ready(function() {
     let userDollars = $("#usd").val();
     let targetCurrency = $("#targetCurrency").val();
     let rates = await getRates();
-    
     let finalResult = processResult(userDollars, targetCurrency, rates);
-    console.log(finalResult)
     
+    $("#results_presentation").text(`${finalResult} ${targetCurrency}`);
     
   })
 
